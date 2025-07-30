@@ -1,0 +1,7 @@
+# Add your project dependencies here
+fastapi[standard]
+pip-tools
+snowflake-connector-python
+snowflake-sqlalchemy
+sqlmodel
+dotenv
