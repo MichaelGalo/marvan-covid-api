@@ -1,7 +1,14 @@
-#!/usr/bin/env python3
+from fastapi import FastAPI
+from src.dependencies.logger_init import setup_logging
 
-def main():
-    print("Hello from the template repo!")
+app = FastAPI()
 
-if __name__ == "__main__":
-    main()
+logger = setup_logging()
+
+@app.get("/")
+async def read_root():
+    logger.info("Root endpoint accessed.")
+    return {
+        "message": "Welcome to the FastAPI demo! Visit /docs for API documentation and how to use this."
+    }
+
