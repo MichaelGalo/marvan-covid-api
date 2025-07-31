@@ -1,12 +1,14 @@
 from sqlalchemy import select
 from enum import Enum
 from sqlalchemy.orm import Session
-from src.models.us_deathcounts import USDeathCounts
+
+from src.dependencies.logger_init import setup_logging
 from src.dependencies.sqlalchemy_connection import sqlalchemy_engine
 from src.models.ca_antibody import CAAntibody
 from src.models.ca_rapidtestdemand import CARapidTestDemand
 from src.models.uk_cases_by_day import UKCovCasesByDay
-from src.dependencies.logger_init import setup_logging
+from src.models.us_deathcounts import USDeathCounts
+
 logger = setup_logging()
 
 class DatabaseModel(Enum):
@@ -40,7 +42,9 @@ def fetch_single_database(database_id, offset, limit):
 def get_data(MODEL, offset, limit):
     engine = sqlalchemy_engine()
     with Session(engine) as session:
-        logger.info(f"Executing query for model: {MODEL.__name__} with offset: {offset} and limit: {limit}")
+        logger.info(
+            f"Executing query for model: {MODEL.__name__} with offset: {offset} and limit: {limit}"
+        )
         stmt = select(MODEL).offset(offset).limit(limit)
         results = session.execute(stmt).scalars().all()
         logger.info(f"Query executed successfully, found {len(results)} records")

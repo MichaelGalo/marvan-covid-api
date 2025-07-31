@@ -1,7 +1,7 @@
+import datetime
+import json
 import logging
 import logging.handlers
-import json
-import datetime
 
 
 def format_json(record):
