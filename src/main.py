@@ -8,7 +8,6 @@ from src.config import DATABASE_METADATA
 app = FastAPI()
 
 logger = setup_logging()
-
 @app.get("/")
 async def read_root():
     logger.info("Root endpoint accessed.")
