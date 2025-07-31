@@ -6,3 +6,4 @@ snowflake-sqlalchemy
 sqlmodel
 dotenv
 sqlalchemy
+pytest

@@ -1,7 +1,7 @@
+import datetime
+import json
 import logging
 import logging.handlers
-import json
-import datetime
 
 
 def format_json(record):
@@ -35,7 +35,8 @@ def setup_logging():
 
     logger = logging.getLogger("json_logger")
     logger.setLevel(logging.INFO)
-    logger.addHandler(file_handler)
-    logger.addHandler(console_handler)
+    if not logger.handlers:
+        logger.addHandler(file_handler)
+        logger.addHandler(console_handler)
 
     return logger
