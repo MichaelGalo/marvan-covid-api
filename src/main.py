@@ -78,7 +78,7 @@ async def get_single_database(database_id: int, limit: int = 20, offset: int = 0
         "offset": offset,
     }, "data": data}
 
-@app.get("/test-endpoint")
+@app.get("/health-check")
 async def fetch_test_endpoint():
     try:
         data = fetch_single_database(2, 0, 20)
