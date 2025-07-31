@@ -1,6 +1,6 @@
 import re
 from datetime import datetime
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from src.dependencies.logger_init import setup_logging
 from src.crud.get_single_database import fetch_single_database
 from src.config import DATABASE_METADATA
@@ -66,8 +66,11 @@ async def get_all_databases(country: str = None, keyword: str = None, last_updat
 @app.get("/databases/{database_id}")
 async def get_single_database(database_id: int, limit: int = 20, offset: int = 0):
     logger.info(f"Single database endpoint at for database_id={database_id} accessed with query parameters: limit={limit}, offset={offset}")
-    data = fetch_single_database(database_id, offset, limit)
-
+    try:
+        data = fetch_single_database(database_id, offset, limit)
+    except ValueError as e:
+        logger.error(f"Error: {e}")
+        raise HTTPException(status_code=400, detail=str(e))
     return {"input parameters": {
         "database_id": database_id,
         "limit": limit,
