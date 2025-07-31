@@ -10,5 +10,5 @@ def fetch_us_deathcounts():
         stmt = select(USDeathCounts)
         results = session.execute(stmt).scalars().all()
         # Convert model instances to dicts for FastAPI serialization
-        us_deathcounts_list = [weather.model_dump() for weather in results]
+        us_deathcounts_list = [death.model_dump() for death in results]
     return us_deathcounts_list
