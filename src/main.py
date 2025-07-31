@@ -8,6 +8,12 @@ from src.config import DATABASE_METADATA
 app = FastAPI()
 
 logger = setup_logging()
+fetch_calls = {
+    1: fetch_ca_antibody,
+    2: fetch_ca_rapidtestdemand,
+    3: fetch_uk_cases_by_day,
+    4: fetch_us_deathcounts,
+}
 
 @app.get("/")
 async def read_root():
