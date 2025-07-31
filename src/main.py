@@ -2,7 +2,6 @@ from fastapi import FastAPI
 from src.dependencies.logger_init import setup_logging
 from src.crud.us_deathcounts import fetch_us_deathcounts
 from src.crud.uk_cases_by_day import fetch_uk_cases_by_day
-from src.crud.us_deathcounts import fetch_us_deathcounts
 
 app = FastAPI()
 
