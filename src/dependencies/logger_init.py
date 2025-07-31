@@ -35,7 +35,8 @@ def setup_logging():
 
     logger = logging.getLogger("json_logger")
     logger.setLevel(logging.INFO)
-    logger.addHandler(file_handler)
-    logger.addHandler(console_handler)
+    if not logger.handlers:
+        logger.addHandler(file_handler)
+        logger.addHandler(console_handler)
 
     return logger
