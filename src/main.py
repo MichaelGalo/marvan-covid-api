@@ -32,8 +32,7 @@ async def get_single_database(database_id: int, limit: int = 20, offset: int = 0
         "database_id": database_id,
         "limit": limit,
         "offset": offset,
-        "data": data
-    }}
+    }, "data": data}
 
 @app.get("/test-endpoint")
 async def fetch_test_endpoint():
