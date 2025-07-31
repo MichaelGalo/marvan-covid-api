@@ -6,6 +6,7 @@ from datetime import date
 #FIXME: Requires a primary key
 class USDeathCounts(SQLModel, table=True):
     __tablename__ = "CLN_US_DEATHCOUNTS"
+    id: int = Field(primary_key=True)
     year: int = Field()
     month: int = Field()
     group: str = Field()
