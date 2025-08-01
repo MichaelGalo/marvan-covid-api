@@ -1,0 +1,68 @@
+{"time": "2025-07-30T15:57:19.950566", "logger": "json_logger", "level": "INFO", "message": "Root endpoint accessed.", "line": 10}
+{"time": "2025-07-30T16:00:03.256125", "logger": "json_logger", "level": "INFO", "message": "Root endpoint accessed.", "line": 10}
+{"time": "2025-07-31T10:57:55.662182", "logger": "json_logger", "level": "INFO", "message": "Root endpoint accessed.", "line": 11}
+{"time": "2025-07-31T10:58:13.039042", "logger": "json_logger", "level": "INFO", "message": "Fetched 5346 records from CLN_US_DEATHCOUNTS.", "line": 20}
+{"time": "2025-07-31T11:03:57.542602", "logger": "json_logger", "level": "INFO", "message": "Fetched 5346 records from CLN_US_DEATHCOUNTS.", "line": 20}
+{"time": "2025-07-31T11:06:24.433906", "logger": "json_logger", "level": "ERROR", "message": "Error fetching data: Session.get() missing 1 required positional argument: 'ident'", "line": 23}
+{"time": "2025-07-31T11:08:27.942431", "logger": "json_logger", "level": "INFO", "message": "Fetched 5346 records from CLN_US_DEATHCOUNTS.", "line": 20}
+{"time": "2025-07-31T11:11:01.674475", "logger": "json_logger", "level": "INFO", "message": "Fetched 10 records from CLN_US_DEATHCOUNTS.", "line": 20}
+{"time": "2025-07-31T11:22:19.818779", "logger": "json_logger", "level": "INFO", "message": "Fetched 10 records from CLN_US_DEATHCOUNTS.", "line": 20}
+{"time": "2025-07-31T11:25:51.587711", "logger": "json_logger", "level": "INFO", "message": "Fetched 10 records from CLN_US_DEATHCOUNTS.", "line": 23}
+{"time": "2025-07-31T12:09:04.183219", "logger": "json_logger", "level": "INFO", "message": "Single database endpoint at for database_id=1 accessed with query parameters: limit=20, offset=0", "line": 28}
+{"time": "2025-07-31T12:40:26.469329", "logger": "json_logger", "level": "INFO", "message": "Error fetching data fetch_ca_antibody() got an unexpected keyword argument 'page'", "line": 56}
+{"time": "2025-07-31T12:46:51.718218", "logger": "json_logger", "level": "INFO", "message": "Error fetching data fetch_ca_antibody() got an unexpected keyword argument 'page'", "line": 56}
+{"time": "2025-07-31T12:47:51.798560", "logger": "json_logger", "level": "INFO", "message": "Error fetching data fetch_ca_antibody() got an unexpected keyword argument 'offset_size'", "line": 56}
+{"time": "2025-07-31T12:48:36.204601", "logger": "json_logger", "level": "INFO", "message": "Fetched 10 records for database_id=1.", "line": 50}
+{"time": "2025-07-31T12:48:50.943802", "logger": "json_logger", "level": "INFO", "message": "Fetched 10 records for database_id=3.", "line": 50}
+{"time": "2025-07-31T12:49:04.381016", "logger": "json_logger", "level": "INFO", "message": "Fetched 10 records for database_id=4.", "line": 50}
+{"time": "2025-07-31T13:28:18.935359", "logger": "json_logger", "level": "INFO", "message": "Databases endpoint accessed with query parameters: country=canada, keyword=None, last_updated=None", "line": 27}
+{"time": "2025-07-31T13:28:28.852771", "logger": "json_logger", "level": "INFO", "message": "Databases endpoint accessed with query parameters: country=Canada, keyword=None, last_updated=None", "line": 27}
+{"time": "2025-07-31T16:11:24.228968", "logger": "json_logger", "level": "INFO", "message": "Single database endpoint at for database_id=1 accessed with query parameters: limit=20, offset=0", "line": 68}
+{"time": "2025-07-31T16:11:24.228968", "logger": "json_logger", "level": "INFO", "message": "Single database endpoint at for database_id=1 accessed with query parameters: limit=20, offset=0", "line": 68}
+{"time": "2025-07-31T16:11:24.231645", "logger": "json_logger", "level": "INFO", "message": "Fetching single database with ID: 1, offset: 0, limit: 20", "line": 26}
+{"time": "2025-07-31T16:11:24.231645", "logger": "json_logger", "level": "INFO", "message": "Fetching single database with ID: 1, offset: 0, limit: 20", "line": 26}
+{"time": "2025-07-31T16:11:24.232478", "logger": "json_logger", "level": "INFO", "message": "Using CAAntibody model", "line": 36}
+{"time": "2025-07-31T16:11:24.232478", "logger": "json_logger", "level": "INFO", "message": "Using CAAntibody model", "line": 36}
+{"time": "2025-07-31T16:11:24.923271", "logger": "json_logger", "level": "INFO", "message": "Executing query for model: CAAntibody with offset: 0 and limit: 20", "line": 43}
+{"time": "2025-07-31T16:11:24.923271", "logger": "json_logger", "level": "INFO", "message": "Executing query for model: CAAntibody with offset: 0 and limit: 20", "line": 43}
+{"time": "2025-07-31T16:11:26.912856", "logger": "json_logger", "level": "INFO", "message": "Query executed successfully, found 20 records", "line": 46}
+{"time": "2025-07-31T16:11:26.912856", "logger": "json_logger", "level": "INFO", "message": "Query executed successfully, found 20 records", "line": 46}
+{"time": "2025-07-31T23:26:48.056682", "logger": "json_logger", "level": "INFO", "message": "Databases endpoint accessed with query parameters: country=canada, keyword=None, last_updated=None", "line": 27}
+{"time": "2025-07-31T23:26:48.057063", "logger": "json_logger", "level": "INFO", "message": "4 databases selected", "line": 32}
+{"time": "2025-07-31T23:26:48.057193", "logger": "json_logger", "level": "INFO", "message": "Returning ['SARS-CoV-2 antibody seroprevalence in Canadians, by age group and sex, November 2020 to April 2021', 'COVID-19 Rapid Test kits demand and usage']", "line": 81}
+{"time": "2025-07-31T23:26:48.057292", "logger": "json_logger", "level": "INFO", "message": "Fetching single database with ID: 1, offset: 0, limit: 5", "line": 28}
+{"time": "2025-07-31T23:26:48.057392", "logger": "json_logger", "level": "INFO", "message": "Using CAAntibody model", "line": 38}
+{"time": "2025-07-31T23:26:48.503702", "logger": "json_logger", "level": "INFO", "message": "Executing query for model: CAAntibody with offset: 0 and limit: 5", "line": 45}
+{"time": "2025-07-31T23:26:50.440531", "logger": "json_logger", "level": "INFO", "message": "Query executed successfully, found 5 records", "line": 50}
+{"time": "2025-07-31T23:26:50.610960", "logger": "json_logger", "level": "INFO", "message": "Fetching single database with ID: 2, offset: 0, limit: 5", "line": 28}
+{"time": "2025-07-31T23:26:50.611342", "logger": "json_logger", "level": "INFO", "message": "Using CARapidTestDemand model", "line": 38}
+{"time": "2025-07-31T23:26:50.612460", "logger": "json_logger", "level": "INFO", "message": "Executing query for model: CARapidTestDemand with offset: 0 and limit: 5", "line": 45}
+{"time": "2025-07-31T23:26:52.060455", "logger": "json_logger", "level": "INFO", "message": "Query executed successfully, found 5 records", "line": 50}
+{"time": "2025-07-31T23:27:02.632254", "logger": "json_logger", "level": "INFO", "message": "Single database endpoint at for database_id=1 accessed with query parameters: limit=20, offset=0", "line": 100}
+{"time": "2025-07-31T23:27:02.632747", "logger": "json_logger", "level": "INFO", "message": "Fetching single database with ID: 1, offset: 0, limit: 20", "line": 28}
+{"time": "2025-07-31T23:27:02.632992", "logger": "json_logger", "level": "INFO", "message": "Using CAAntibody model", "line": 38}
+{"time": "2025-07-31T23:27:02.633962", "logger": "json_logger", "level": "INFO", "message": "Executing query for model: CAAntibody with offset: 0 and limit: 20", "line": 45}
+{"time": "2025-07-31T23:27:03.631684", "logger": "json_logger", "level": "INFO", "message": "Query executed successfully, found 20 records", "line": 50}
+{"time": "2025-08-01T09:32:25.062883", "logger": "json_logger", "level": "INFO", "message": "Testing valid single database endpoint request", "line": 19}
+{"time": "2025-08-01T09:32:25.161956", "logger": "json_logger", "level": "INFO", "message": "Single database endpoint at for database_id=1 accessed with query parameters: limit=5, offset=0", "line": 100}
+{"time": "2025-08-01T09:32:25.164579", "logger": "json_logger", "level": "INFO", "message": "Response status: 200", "line": 21}
+{"time": "2025-08-01T09:32:25.164928", "logger": "json_logger", "level": "INFO", "message": "Response JSON: {'input parameters': {'database_id': 1, 'limit': 5, 'offset': 0}, 'data': [{'mock': 'data'}]}", "line": 24}
+{"time": "2025-08-01T09:32:25.167317", "logger": "json_logger", "level": "INFO", "message": "Testing invalid single database endpoint request", "line": 32}
+{"time": "2025-08-01T09:32:25.170427", "logger": "json_logger", "level": "INFO", "message": "Single database endpoint at for database_id=99 accessed with query parameters: limit=20, offset=0", "line": 100}
+{"time": "2025-08-01T09:32:25.170912", "logger": "json_logger", "level": "INFO", "message": "Fetching single database with ID: 99, offset: 0, limit: 20", "line": 28}
+{"time": "2025-08-01T09:32:25.171104", "logger": "json_logger", "level": "INFO", "message": "database_id not valid.", "line": 32}
+{"time": "2025-08-01T09:32:25.171234", "logger": "json_logger", "level": "ERROR", "message": "Error: Invalid database_id provided.", "line": 106}
+{"time": "2025-08-01T09:32:25.172867", "logger": "json_logger", "level": "INFO", "message": "Response status: 400", "line": 34}
+{"time": "2025-08-01T09:32:25.173158", "logger": "json_logger", "level": "INFO", "message": "Response JSON: {'detail': 'Invalid database_id provided.'}", "line": 37}
+{"time": "2025-08-01T09:32:25.175050", "logger": "json_logger", "level": "INFO", "message": "Testing Snowflake connection ping", "line": 43}
+{"time": "2025-08-01T09:32:27.284565", "logger": "json_logger", "level": "INFO", "message": "Connected to Snowflake", "line": 47}
+{"time": "2025-08-01T09:32:27.490669", "logger": "json_logger", "level": "INFO", "message": "SELECT 1 result: 1", "line": 50}
+{"time": "2025-08-01T09:32:27.695756", "logger": "json_logger", "level": "INFO", "message": "Testing Snowflake current database query", "line": 58}
+{"time": "2025-08-01T09:32:28.399445", "logger": "json_logger", "level": "INFO", "message": "Connected to Snowflake", "line": 62}
+{"time": "2025-08-01T09:32:28.492201", "logger": "json_logger", "level": "INFO", "message": "CURRENT_DATABASE() result: MARVAN_DB", "line": 65}
+{"time": "2025-08-01T09:32:28.559178", "logger": "json_logger", "level": "INFO", "message": "Testing Snowflake current schema query", "line": 75}
+{"time": "2025-08-01T09:32:29.359809", "logger": "json_logger", "level": "INFO", "message": "Connected to Snowflake", "line": 79}
+{"time": "2025-08-01T09:32:29.425572", "logger": "json_logger", "level": "INFO", "message": "CURRENT_SCHEMA() result: CLEANED", "line": 82}
+{"time": "2025-08-01T09:32:29.500238", "logger": "json_logger", "level": "INFO", "message": "Testing Snowflake list tables query", "line": 92}
+{"time": "2025-08-01T09:32:30.275266", "logger": "json_logger", "level": "INFO", "message": "Connected to Snowflake", "line": 96}
+{"time": "2025-08-01T09:32:30.418437", "logger": "json_logger", "level": "INFO", "message": "SHOW TABLES result: [(datetime.datetime(2025, 7, 31, 19, 57, 59, 822000, tzinfo=<DstTzInfo 'America/Los_Angeles' PDT-1 day, 17:00:00 DST>), 'CLN_CA_ANTIBODY', 'MARVAN_DB', 'CLEANED', 'TRANSIENT', '', '', 108, 7168, 'PUBLIC', '1', 'OFF', 'OFF', 'OFF', None, None, 'N', 'N', 'ROLE', 'N', 'N', 'N', 'N', 'N'), (datetime.datetime(2025, 7, 31, 19, 58, 0, 780000, tzinfo=<DstTzInfo 'America/Los_Angeles' PDT-1 day, 17:00:00 DST>), 'CLN_CA_RAPIDTESTDEMAND', 'MARVAN_DB', 'CLEANED', 'TRANSIENT', '', '', 2394, 67072, 'PUBLIC', '1', 'OFF', 'OFF', 'OFF', None, None, 'N', 'N', 'ROLE', 'N', 'N', 'N', 'N', 'N'), (datetime.datetime(2025, 7, 31, 19, 58, 1, 621000, tzinfo=<DstTzInfo 'America/Los_Angeles' PDT-1 day, 17:00:00 DST>), 'CLN_UK_COVCASESBYDAY', 'MARVAN_DB', 'CLEANED', 'TRANSIENT', '', '', 2009, 13824, 'PUBLIC', '1', 'OFF', 'OFF', 'OFF', None, None, 'N', 'N', 'ROLE', 'N', 'N', 'N', 'N', 'N'), (datetime.datetime(2025, 7, 31, 19, 58, 2, 441000, tzinfo=<DstTzInfo 'America/Los_Angeles' PDT-1 day, 17:00:00 DST>), 'CLN_US_DEATHCOUNTS', 'MARVAN_DB', 'CLEANED', 'TRANSIENT', '', '', 5346, 91136, 'PUBLIC', '1', 'OFF', 'OFF', 'OFF', None, None, 'N', 'N', 'ROLE', 'N', 'N', 'N', 'N', 'N')]", "line": 99}

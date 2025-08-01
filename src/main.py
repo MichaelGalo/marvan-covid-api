@@ -78,7 +78,7 @@ async def get_all_databases(
                     "error": "last_updated must be a date in the format YYYY-MM-DD, YYYY-MM, YYYY. Databases will return that have been updated on or since that date."
                 }
 
-        logger.info(f"Returning {[item["dataset_name"] for item in headers_filtered]}")
+        logger.info(f"Returning {[item['dataset_name'] for item in headers_filtered]}")
     except Exception as e:
         logger.info(e)
         return {"error": f"{e}"}
