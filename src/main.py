@@ -16,29 +16,21 @@ logger = setup_logging()
 async def read_root():
     logger.info("Root endpoint accessed.")
     return {
-        "message": "Welcome to the FastAPI demo! Visit /docs for API documentation and how to use this."
+        "message": "Welcome to the data portal! Visit /docs for API documentation and usage instructions."
     }
 
-
-@app.get("/databases/")
-async def get_all_databases(
-    country: str = None, keyword: str = None, last_updated: str = None
+@app.get("/data")
+async def get_all_datasets(
+    keyword: str = None, last_updated: str = None
 ):
     logger.info(
-        f"Databases endpoint accessed with query parameters: country={country}, keyword={keyword}, last_updated={last_updated}"
+        f"Datasets endpoint accessed with query parameters: keyword={keyword}, last_updated={last_updated}"
     )
 
     headers_filtered = [dataset for dataset in DATABASE_METADATA.values()]
-    logger.info(f"{len(headers_filtered)} databases selected")
+    logger.info(f"{len(headers_filtered)} datasets selected")
 
     try:
-        if country != None:
-            headers_filtered = [
-                item
-                for item in headers_filtered
-                if country.lower() in item["country"].lower()
-            ]
-
         if keyword != None:
             # Allow for keyword to match where "covid 19" == "covid-19"
             keyword_simple = keyword.lower().replace(" ", "").replace("-", "")
@@ -74,19 +66,17 @@ async def get_all_databases(
             else:
                 logger.info(f"Date input {last_updated} is not in valid format")
 
-                return {
-                    "error": "last_updated must be a date in the format YYYY-MM-DD, YYYY-MM, YYYY. Databases will return that have been updated on or since that date."
-                }
+                return HTTPException(status_code=400, detail="last_updated must be a date in the format YYYY-MM-DD, YYYY-MM, YYYY. Dataset will return that have been updated on or since that date.")
 
         logger.info(f"Returning {[item["dataset_name"] for item in headers_filtered]}")
     except Exception as e:
         logger.info(e)
-        return {"error": f"{e}"}
+        return HTTPException(status_code=400, detail=str(e))
 
-    for database in headers_filtered:
+    for dataset in headers_filtered:
         try:
-            database["data_preview"] = fetch_single_database(
-                database["database_id"], 0, 5
+            dataset["data_preview"] = fetch_single_database(
+                dataset["dataset_id"], 0, 5
             )
         except Exception as e:
             logger.error(e)
@@ -94,26 +84,32 @@ async def get_all_databases(
 
     return {"data": headers_filtered}
 
-
-@app.get("/databases/{database_id}")
-async def get_single_database(database_id: int, limit: int = 20, offset: int = 0):
+@app.get("/data/{dataset_id}", tags=["Datasets"])
+async def get_single_dataset(dataset_id: int, limit: int = 20, offset: int = 0):
     logger.info(
-        f"Single database endpoint at for database_id={database_id} accessed with query parameters: limit={limit}, offset={offset}"
+        f"Single dataset endpoint for dataset_id={dataset_id} accessed with query parameters: limit={limit}, offset={offset}"
     )
     try:
-        data = fetch_single_database(database_id, offset, limit)
+        data = fetch_single_database(dataset_id, offset, limit)
     except ValueError as e:
         logger.error(f"Error: {e}")
         raise HTTPException(status_code=400, detail=str(e))
     return {
         "input parameters": {
-            "database_id": database_id,
+            "dataset_id": dataset_id,
             "limit": limit,
             "offset": offset,
         },
         "data": data,
     }
 
+@app.get("/data/countries")
+async def get_countries():
+    pass
+
+@app.get("/data/countries/{country_id}")
+async def get_country_data(country_id: int):
+    pass
 
 @app.get("/health-check")
 async def fetch_test_endpoint():
