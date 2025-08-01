@@ -15,11 +15,6 @@ This project provides a FastAPI-based REST API for users to securely access COVI
 - Efficient querying and data retrieval from Snowflake
 - Modular codebase for easy extension and maintenance
 
-## Project Structure
-
-- `src/`: FastAPI application and core logic
-- `tests/`: Unit and integration tests
-- `logs/`: Log files for monitoring and debugging
 
 ## Getting Started
 
@@ -35,10 +30,3 @@ This project provides a FastAPI-based REST API for users to securely access COVI
 4. **Access the API docs:**
    Visit [http://localhost:8000/docs](http://localhost:8000/docs) for interactive documentation.
 
-## Usage
-
-Use the provided endpoints to query COVID data from Snowflake. Refer to the API docs for available endpoints, parameters, and response formats.
-
-
----
-**Note:** Ensure you have the necessary Snowflake access and credentials before using the API.
