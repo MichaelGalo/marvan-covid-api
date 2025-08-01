@@ -50,4 +50,5 @@ jobs:
 
       - name: Test with pytest
         run: |
-          PYTHONPATH=src pytest --cov=. --cov-report=xml
+          export PYTHONPATH=src 
+          pytest --cov=. --cov-report=xml
