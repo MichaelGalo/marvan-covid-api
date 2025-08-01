@@ -1,7 +1,6 @@
-from datetime import date, datetime
-from typing import Optional
+from datetime import datetime
 
-from sqlalchemy import Date, DateTime, Float, Integer, String
+from sqlalchemy import DateTime, Integer, String
 from sqlmodel import Column, Field, SQLModel
 
 
