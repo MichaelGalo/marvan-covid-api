@@ -11,7 +11,7 @@ class DATASET_METADATA(SQLModel, table=True):
     DATASET_ID: int = Field(sa_column=Column("DATASET_ID", Integer, primary_key=True))
     COUNTRY: str = Field(sa_column=Column("COUNTRY", String, quote=True))
     DATASET_NAME: str = Field(sa_column=Column("DATASET_NAME", String, quote=True))
-    DESCRIPTION: str = Field(sa_column=Column("Description", String, quote=True))
+    DESCRIPTION: str = Field(sa_column=Column("DESCRIPTION", String, quote=True))
     LAST_UPDATED: datetime = Field(
         sa_column=Column("LAST_UPDATED", DateTime, quote=True)
     )
