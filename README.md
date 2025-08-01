@@ -15,11 +15,16 @@ This project provides a FastAPI-based REST API for users to securely access COVI
 - Efficient querying and data retrieval from Snowflake
 - Modular codebase for easy extension and maintenance
 
-## Project Structure
+## API Endpoints
 
-- `src/`: FastAPI application and core logic
-- `tests/`: Unit and integration tests
-- `logs/`: Log files for monitoring and debugging
+The following endpoints are available:
+
+- `GET /` — Root endpoint, welcome message and redirect to the swagger docs.
+- `GET /data/datasets` — List all datasets (optional filters: `country`, `keyword`, `last_updated`).
+- `GET /data/datasets/{dataset_id}` — Get a single dataset by ID (optional: `limit`, `offset`).
+- `GET /data/countries` — List all countries and their datasets (optional: `limit`, `offset`).
+- `GET /data/countries/{country_name}` — Get all datasets for a specific country (optional: `limit`, `offset`).
+
 
 ## Getting Started
 
@@ -35,10 +40,3 @@ This project provides a FastAPI-based REST API for users to securely access COVI
 4. **Access the API docs:**
    Visit [http://localhost:8000/docs](http://localhost:8000/docs) for interactive documentation.
 
-## Usage
-
-Use the provided endpoints to query COVID data from Snowflake. Refer to the API docs for available endpoints, parameters, and response formats.
-
-
----
-**Note:** Ensure you have the necessary Snowflake access and credentials before using the API.

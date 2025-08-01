@@ -13,30 +13,49 @@ logger = setup_logging()
 client = TestClient(app)
 
 
-def test_get_single_database_endpoint_valid():
-    with patch("src.main.fetch_single_database") as mock_fetch:
-        mock_fetch.return_value = [{"mock": "data"}]
-        logger.info("Testing valid single database endpoint request")
-        response = client.get("/databases/1?limit=5&offset=0")
-        logger.info(f"Response status: {response.status_code}")
+def test_get_single_dataset_valid():
+    class Header:
+        DATASET_ID = 1
+        COUNTRY = "USA"
+        DATASET_NAME = "Test Dataset"
+        DESCRIPTION = "A test dataset."
+        LAST_UPDATED = "2024-01-01"
+
+    def side_effect(dataset_id, offset, limit):
+        if dataset_id == 0:
+            return [Header()]
+        elif dataset_id == 1:
+            return [{"col1": "val1"}]
+        return []
+
+    with patch("src.main.fetch_single_dataset") as mock_fetch:
+        mock_fetch.side_effect = side_effect
+        response = client.get("/data/datasets/1?limit=5&offset=0")
         assert response.status_code == 200
         data = response.json()
-        logger.info(f"Response JSON: {data}")
-        if "data" not in data:
-            print("Response JSON:", data)
-        assert "data" in data
-        assert data["data"] == [{"mock": "data"}]
+        assert data["dataset_id"] == 1
+        assert data["data"] == [{"col1": "val1"}]
 
+def test_get_single_dataset_invalid():
+    class Header:
+        DATASET_ID = 1
+        COUNTRY = "USA"
+        DATASET_NAME = "Test Dataset"
+        DESCRIPTION = "A test dataset."
+        LAST_UPDATED = "2024-01-01"
 
-def test_get_single_database_endpoint_invalid():
-    logger.info("Testing invalid single database endpoint request")
-    response = client.get("/databases/99")
-    logger.info(f"Response status: {response.status_code}")
-    assert response.status_code == 400
-    data = response.json()
-    logger.info(f"Response JSON: {data}")
-    assert "detail" in data
-    assert "invalid" in data["detail"].lower()
+    def side_effect(dataset_id, offset, limit):
+        if dataset_id == 0:
+            return [Header()]
+        elif dataset_id == 99:
+            raise ValueError("Invalid dataset_id")
+        return []
+
+    with patch("src.main.fetch_single_dataset") as mock_fetch:
+        mock_fetch.side_effect = side_effect
+        response = client.get("/data/datasets/99")
+        assert response.status_code == 400
+        assert "invalid" in response.json()["detail"].lower()
 
 
 def test_snowflake_connection_ping():
